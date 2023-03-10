@@ -45,4 +45,5 @@ Pin 13 - PE9
 Pin 14 - PF13
 
 A description of the tests you performed on the system, and the results.
+To test the functionality of our system, Dylan and I entered the alarm time 10 seconds after the current time. When the alarm time is the current time the buzzer goes off and so does the servo motor. For testing purposes motion only needed to be detected for 3 seconds to off the alarm. All of these functions worked well every time we tested. We had trouble with RGB led, when we run the code, the LED will either turn on when it's too much light or not turn at all. The solution was to call only the inital functions of the LDR and the LED as their update functions in the alarm.cpp file. Another problem we ran into was if we set the alarm time too close to the current time, the alarm sounds too early. We weren't really sure why this occurred, so we just set the aalrm to be 20 seconds before teh current time when testing.
 Any other details that will help the reader understand your code.
