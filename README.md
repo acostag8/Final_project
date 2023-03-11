@@ -1,6 +1,6 @@
 Gabi Acosta and Dylan Robichaud. 
 Title of Project: Embedded Microcontroller Alarm Clock Date: 03/10/23
-Summary of behavior:
+Summary of behavior: change !!!
 The user is allowed to set the alarm date and time using their PC keyboard and serial monitor. The current time and the alarm date and time are compared, if they are equal, the alarmState is set to ON. When the alarmState is ON, the buzzer, IR sensor, LDR sensor and servo motor are all activated. If the LDR sensor detects too little light in the room, the RGB LED is turned ON. When the alarm is activated, the servo motor is turned on to remove the blanket off the bed. The servo motor stays on for 20 straight seconds then it stops moving. The IR sensor has to detect motion for 20 straight seconds, after the alarm is deactived and the buzzer stops ringing.
 
 List of Modules:
@@ -15,7 +15,7 @@ Display - This module programs the LCD display. It can clear the screen and set 
 
 Ir Sensor - When the alarm is activated, the IR sensor is activated. To deactivate the alarm the IR sensor is programmed to detect 20 straight seconds of motion. If motion is not detected the IR sensor waits to detect motion. If motion is detected for less than 20 seconds then the time is restarted. This code was partially writted from scratch and online. 
 
-LDR sensor - to detect if there is enough light in the room. The voltage of the LDR is used. IF the voltage read is less than 0.6V then the RGB led turns on. This code is based on the an exercise we did in Chapter 5.
+LDR sensor - to detect if there is enough light in the room. The voltage of the LDR is used. IF the voltage read is less than 0.6V then the RGB led turns on. This code is based on the an exercise we did in Chapter 5. cahnge!!!
 
 PC Serial Com - This module controls the PC monitor. The monitor is programmed to show the alarm state, the alarm time, the current date and time and available commands. The user is also able to set the current date and time and also the alarm time using the PC keyboard. This code was influenced by the textbook code.
 
@@ -46,5 +46,5 @@ Pin 13 - PE9
 Pin 14 - PF13
 
 A description of the tests you performed on the system, and the results.
-To test the functionality of our system, Dylan and I entered the alarm time 10 seconds after the current time. When the alarm time is the current time the buzzer goes off and so does the servo motor. For testing purposes motion only needed to be detected for 3 seconds to off the alarm. All of these functions worked well every time we tested. We had trouble with RGB led, when we run the code, the LED will either turn on when it's too much light or not turn at all. The solution was to call only the inital functions of the LDR and the LED as their update functions in the alarm.cpp file. Another problem we ran into was if we set the alarm time too close to the current time, the alarm sounds too early. We realised that the system was reading only the first digit of each hour minute and second. This means if we set the alarm time to 12:15.30, it will ring at 12:15.30 or 12:16.30. When we compared the alarm time with the current time we originally compared the hours digits as a pair instead of individually. When we fixed this the alarm time worked. 
+
 Any other details that will help the reader understand your code.
